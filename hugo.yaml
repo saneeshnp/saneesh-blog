@@ -1,0 +1,80 @@
+baseURL: "https://saneesh.net/"
+title: "Saneesh's Blog"
+paginate: 5
+theme: PaperMod
+
+enableRobotsTXT: true
+buildDrafts: false
+buildFuture: false
+buildExpired: false
+
+minify:
+  disableXML: true
+  minifyOutput: true
+
+languages:
+  en:
+    languageName: "English"
+    weight: 1
+    menu:
+      main:
+        - name: Archive
+          url: archives/
+          weight: 5
+        - name: Search
+          url: search/
+          weight: 10
+        - name: Tags
+          url: tags/
+          weight: 10
+
+outputs:
+  home:
+    - HTML
+    - RSS
+    - JSON  # Required for search functionality
+
+params:
+  env: production
+  title: "Saneesh"
+  description: "Thoughts on AI, investing, and philosophy"
+  author: "Saneesh"
+  mainSections:
+    - posts
+
+  defaultTheme: auto  # Switches between light/dark based on browser
+  ShowReadingTime: true
+  ShowShareButtons: true
+  ShowPostNavLinks: true
+  ShowBreadCrumbs: true
+  ShowCodeCopyButtons: true
+  ShowWordCount: false
+  ShowRssButtonInSectionTermList: true
+  UseHugoToc: true
+  disableSpecial1stPost: false
+
+  homeInfoParams:
+    Title: "Hi there"
+    Content: >
+      Welcome to my corner of the internet.
+      I write about AI, investing, and philosophy.
+
+  socialIcons:
+    - name: github
+      url: "https://github.com/saneeshnp"
+    - name: rss
+      url: "index.xml"
+
+  # Security headers
+  assets:
+    disableFingerprinting: false  # Enables SRI (Subresource Integrity)
+
+  # Search
+  fuseOpts:
+    isCaseSensitive: false
+    shouldSort: true
+    location: 0
+    distance: 1000
+    threshold: 0.4
+    minMatchCharLength: 0
+    keys: ["title", "permalink", "summary", "content"]

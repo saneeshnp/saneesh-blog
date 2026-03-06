@@ -1,0 +1,20 @@
+# Hugo build output
+public/
+resources/_gen/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+*.code-workspace
+*.swp
+*.swo
+
+# Hugo lock file
+.hugo_build.lock
+
+# Environment files (never commit secrets)
+.env
+.env.local
