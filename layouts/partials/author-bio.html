@@ -1,7 +1,13 @@
-<div class="author-bio" style="border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
-  <img src="/images/author.jpg" alt="{{ .Site.Params.authorBio.name }}" style="width: 64px; height: 64px; border-radius: 50%;" />
-  <div>
-    <strong>{{ .Site.Params.authorBio.name }}</strong>
-    <p style="margin: 0.25rem 0 0; font-size: 0.9rem; opacity: 0.8;">{{ .Site.Params.authorBio.bio }}</p>
-  </div>
+<div class="author-bio"
+    style="border-top: 1px solid var(--border); margin-top: 2rem; padding-top: 1.5rem; display: flex; gap: 1rem; align-items: flex-start;">
+    <img src="/images/author.jpg" alt="{{ .Site.Params.authorBio.name }}"
+        style="width: 64px; height: 64px; border-radius: 50%;" />
+    <div>
+        <strong>{{ .Site.Params.authorBio.name }}</strong>
+        <p style="margin: 0.25rem 0 0; font-size: 0.9rem; opacity: 0.8;">
+            {{ .Site.Params.authorBio.bio }}
+            <br>
+            <a href="https://x.com/saneeshnp" target="_blank" rel="noopener"><em>Click here to follow him on X</em></a>
+        </p>
+    </div>
 </div>

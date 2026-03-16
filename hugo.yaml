@@ -39,9 +39,13 @@ params:
   title: "Saneesh"
   description: "Thoughts on AI, investing, and philosophy"
   author: "Saneesh"
+  authorBio:
+    name: "Saneesh"
+    bio: "Saneesh writes about AI, tech, investing, and philosophy. He spends his free time reading about personal finance, experimenting with AI tools, and occasionally overthinking the implications of it all. He's been part of the IT industry for close to a decade now."
   mainSections:
     - posts
 
+  comments: true
   defaultTheme: auto  # Switches between light/dark based on browser
   ShowReadingTime: true
   ShowShareButtons: true
@@ -54,10 +58,9 @@ params:
   disableSpecial1stPost: false
 
   homeInfoParams:
-    Title: "Hi there"
+    Title: "Hi there!"
     Content: >
-      Welcome to my corner of the internet.
-      I write about AI, investing, and philosophy.
+      Welcome to my corner of the internet. I'm Saneesh, and after close to a decade in the tech industry, this is where I put down my thoughts on AI, tech, investing, and philosophy. I also document what I'm learning along the way, from personal finance to the bigger questions about how AI is shaping our world. If any of that sounds interesting, hope you find something useful.
 
   socialIcons:
     - name: x 

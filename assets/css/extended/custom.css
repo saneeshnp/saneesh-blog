@@ -1,0 +1,39 @@
+/* Photo floated left inside the bio text area */
+.first-entry.home-info .entry-content {
+  display: block;
+  text-align: left;
+  overflow: hidden;
+}
+
+.first-entry.home-info .entry-content::before {
+  content: "";
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: url("/images/author.jpg") center/cover no-repeat;
+  float: left;
+  margin: 0.5rem 1rem 0.5rem 0;
+  shape-outside: circle(50%);
+}
+
+/* Spacing between bio and posts */
+.first-entry.home-info {
+  margin-bottom: 1.5rem;
+}
+
+/* Recent Posts heading - outside the post card */
+.home-info + .post-entry {
+  margin-top: 4rem;
+  position: relative;
+}
+
+.home-info + .post-entry::before {
+  content: "Recent Posts";
+  display: block;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+  position: absolute;
+  top: -2.75rem;
+  left: 0;
+}
