@@ -37,3 +37,29 @@
   top: -2.75rem;
   left: 0;
 }
+
+/* Author bio box on post pages */
+.author-bio {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  margin-top: 2rem;
+  background: var(--code-bg);
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+/* Homepage bio box */
+.first-entry.home-info {
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.25rem;
+  background: var(--code-bg);
+  margin-bottom: 1.5rem;
+}
+
+[data-theme="light"] .first-entry.home-info,
+:root:not([data-theme="dark"]) .first-entry.home-info {
+  background: #ffffffd6;
+}

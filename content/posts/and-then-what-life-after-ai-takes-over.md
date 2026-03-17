@@ -42,10 +42,10 @@ I am not saying we should not embrace AI, in fact I would call myself a proponen
 
 I genuinely feel we should take a pause often, in these times, to remind ourselves what we are capable of, while embracing what’s going to come next.
 
-I would also remind myself to enjoy the little chores that may lose meaning as they get replaced by AI in the coming future. We never know, somewhere in the foreseeable future there might be an anti-AI movement, because people are fed up with it, and they miss being human. It’s really impossible to predict how we feel about this in the future, but let’s embrace the change while not forgetting who we are.
-
 > Let’s embrace the change while not forgetting who we are.
 > 
+
+I would also remind myself to enjoy the little chores that may lose meaning as they get replaced by AI in the coming future. We never know, somewhere in the foreseeable future there might be an anti-AI movement, because people are fed up with it, and they miss being human. It’s really impossible to predict how we feel about this in the future, but let’s embrace the change while not forgetting who we are.
 
 When it comes to AGI and advanced AI, we should think and ask:
 

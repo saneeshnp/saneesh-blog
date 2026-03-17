@@ -60,7 +60,7 @@ params:
   homeInfoParams:
     Title: "Hi there!"
     Content: >
-      Welcome to my corner of the internet. I'm Saneesh, and after close to a decade in the tech industry, this is where I put down my thoughts on AI, tech, investing, and philosophy. I also document what I'm learning along the way, from personal finance to the bigger questions about how AI is shaping our world. If any of that sounds interesting, hope you find something useful.
+      Welcome to my corner of the internet. I’m Saneesh, and this is where I put down my thoughts on AI, tech, investing, and philosophy. I also document what I’m learning along the way, from personal finance to the bigger questions about how AI is shaping our world. If any of that sounds interesting, I hope you find something useful here. 
 
   socialIcons:
     - name: x 
