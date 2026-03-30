@@ -67,6 +67,10 @@
 /* Style post description to distinguish it from body content */
 .post-description {
   font-size: 0.95rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.5rem;
+  background: var(--code-bg);
   color: var(--secondary);
   font-style: italic;
   margin-top: 0.25rem;
