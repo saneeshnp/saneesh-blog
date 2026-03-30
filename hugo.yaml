@@ -27,6 +27,10 @@ languages:
         - name: Tags
           url: tags/
           weight: 10
+        - name: Projects
+          url: /projects/
+          weight: 30        
+          
 
 outputs:
   home:

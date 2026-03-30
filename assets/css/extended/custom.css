@@ -77,3 +77,113 @@
   margin-bottom: 0.5rem;
   line-height: 1.5;
 }
+
+/* Projects Page */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+}
+
+.project-card {
+  border: 2px solid var(--border);
+  border-radius: 8px;
+  padding: 1.5rem;
+  background: var(--entry);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.12);
+  border-color: var(--primary);
+}
+
+.project-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 0.75rem;
+}
+
+.project-name {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+}
+
+.project-github-link {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  font-size: 0.85rem;
+  color: var(--secondary);
+  text-decoration: none;
+}
+
+.project-github-link:hover {
+  color: var(--primary);
+}
+
+.project-description {
+  font-size: 0.9rem;
+  color: var(--secondary);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.project-tag {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.6rem;
+  border-radius: 4px;
+  background: var(--code-bg);
+  color: var(--secondary);
+}
+
+.projects-intro {
+  color: var(--secondary);
+  font-size: 0.95rem;
+  line-height: 1.7;
+  margin-bottom: 0.5rem;
+}
+
+.project-actions {
+  margin-top: 1.25rem;
+}
+
+.project-launch-btn {
+  display: inline-block;
+  padding: 0.4rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 500;
+  border-radius: 5px;
+  border: 1px solid var(--primary);
+  color: var(--primary);
+  text-decoration: none;
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.project-launch-btn:hover {
+  background: var(--primary);
+  color: var(--theme);
+}
+
+.project-coming-soon {
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.2rem 0.65rem;
+  border-radius: 4px;
+  background: var(--code-bg);
+  color: var(--secondary);
+  border: 1px dashed var(--border);
+}
+
+.project-card--wip {
+  opacity: 0.75;
+}
