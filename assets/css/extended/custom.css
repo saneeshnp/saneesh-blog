@@ -187,3 +187,29 @@
 .project-card--wip {
   opacity: 0.75;
 }
+
+.toc {
+  font-size: 0.85rem;
+}
+
+/* Animation */
+.toc #TableOfContents {
+  overflow: hidden;
+  transition: height 0.3s ease;
+}
+
+/* Bullet point removal */
+.toc #TableOfContents ul {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.toc #TableOfContents > ul {
+  padding-left: 0;
+}
+
+/* Hide post description from view — description is still written in front matter
+   for SEO meta tags, but removed here to reduce preamble before the post body */
+.post-description {
+  display: none;
+}

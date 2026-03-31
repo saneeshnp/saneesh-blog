@@ -60,6 +60,8 @@ params:
   ShowRssButtonInSectionTermList: true
   UseHugoToc: true
   disableSpecial1stPost: false
+  ShowToc: true
+  TocOpen: true   # expanded by default
 
   homeInfoParams:
     Title: "Hi there!"

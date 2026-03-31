@@ -1,0 +1,33 @@
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const details = document.querySelector('.toc details');
+  if (!details) return;
+
+  const content = details.querySelector('#TableOfContents');
+
+  details.addEventListener('click', (e) => {
+    // Only intercept clicks on the summary toggle, not TOC links
+    if (!e.target.closest('summary')) return;
+    e.preventDefault();
+
+    if (details.open) {
+      // Animate closed
+      content.style.height = content.scrollHeight + 'px';
+      requestAnimationFrame(() => { content.style.height = '0'; });
+      content.addEventListener('transitionend', () => {
+        details.removeAttribute('open');
+        content.style.height = '';
+      }, { once: true });
+    } else {
+      // Animate open
+      details.setAttribute('open', '');
+      const target = content.scrollHeight + 'px';
+      content.style.height = '0';
+      requestAnimationFrame(() => { content.style.height = target; });
+      content.addEventListener('transitionend', () => {
+        content.style.height = '';
+      }, { once: true });
+    }
+  });
+});
+</script>
