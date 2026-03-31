@@ -32,7 +32,7 @@ While we are looking forward to a happy life in future, we are not designed to t
 
 ## What should we ideally do?
 
-The ideal thing to do is to not panic, and be strategic. While I want to cover some traditional and practical advice before jumping into how to make use of AI here, if you want to know about that first, you can skip this section to the next section on AI below.
+The most important thing you can do right now is avoid panicking and get strategic. I’m going to cover some practical advice first, but if you’re eager to see how AI fits into the picture, feel free to [skip to the AI section below](#investing-using-ai).
 
 ### Preplan your investment decisions for a market crash beforehand
 
@@ -46,7 +46,7 @@ This was one of the ideas I learned from the book *The Behavioral Investor* by D
 
 This is an extension to the above point. If you decide in advance that you want to have a moderately risk-adjusted 60-40 portfolio (where 60% of your investments goes to equity and 40% in non-equity), you won't have to do anything else other than adjusting to this ratio. During a market crash, your equity portion will come down, and you can balance it from the non-equity portion to meet the target, and do the opposite when your equities are doing extremely well.
 
-## How can AI help in this situation?
+## How can AI help in this situation?{#investing-using-ai}
 
 While most of the above may be traditional advice, you can leverage AI to stay informed and grounded in difficult market situations. While a pre-defined strategy works well for market downturns, it is also important to understand the current context. What is happening around you in terms of geopolitically or macro economically, can help you stay grounded. Here are some ideas that I often use:
 
@@ -71,7 +71,8 @@ You could use this context in the above prompt to make it more impactful:
 
 > "Considering my investing persona with the following details ((Add your investing persona details that we discussed above)) Can you give me an overview of the current macroeconomic situation and the recent events, both globally and locally, that are impacting the stock markets? Also assess as a personal financial advisor if I need to review anything in my portfolio given the ongoing macroeconomic and microeconomic situation and my investing persona"
 
-## Further Reading
+The examples above are just a starting point. The goal isn't to outsource all your financial decisions to AI, but rather to use it as a tool to help you with your decisions. By letting AI complement your own judgment in the right way, you can build confidence in your choices and stay grounded even during difficult market conditions.
 
-- *The Behavioral Investor* — Daniel Crosby
-- Future Self Continuity research by Hal Hershfield — [The Stranger Within](https://newsroom.ucla.edu/stories/the-stranger-within-connecting-with-our-future-selves)
+### References and Further Reading
+- **Books:** *[The Behavioral Investor](https://www.goodreads.com/book/show/36960014)* by Daniel Crosby
+- **Blogs/Research:** Future Self Continuity research by Hal Hershfield — [The Stranger Within](https://newsroom.ucla.edu/stories/the-stranger-within-connecting-with-our-future-selves)
