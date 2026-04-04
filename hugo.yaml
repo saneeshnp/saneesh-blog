@@ -61,7 +61,7 @@ params:
   UseHugoToc: true
   disableSpecial1stPost: false
   ShowToc: true
-  TocOpen: true   # expanded by default
+  TocOpen: false   # we are keeping the toc closed by default
 
   homeInfoParams:
     Title: "Hi there!"
