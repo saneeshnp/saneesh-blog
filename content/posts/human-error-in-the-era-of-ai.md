@@ -8,7 +8,7 @@ ShowToc: false
 
 Recently I came across an email about a job posting that caught my attention. It was not the job in particular, but a specific sentence in the description.
 
-It read "Required Skills & Qualifications: 210 years of experience in ...". While the *'210 years of experience' part*  sounded funny at first glance, it felt odd too, for the reason that it's been some time since I have come across an error like this in an email.
+It read *"Required Skills & Qualifications: 210 years of experience in ..."* While it sounded funny at first glance, it felt odd too, for the reason that it's been some time since I have come across an error like this in an email.
 
 Email and text generation has been widely dominated by AI lately, in fact that's something generative AI does best. While we see a lot of errors with workflows in emails - like seeing the raw AI prompt in the email body instead of the actual text, as the system was not integrated well, a grammatical or semantic error in a sentence is uncommon these days.
 
