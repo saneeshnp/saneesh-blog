@@ -2,9 +2,9 @@
 title: "Hello World!"
 date: 2026-03-06
 draft: false
-tags: ["meta"]
 categories: ["general"]
 description: "My first blog post on saneesh.net"
+ShowToc: false
 ---
 
 This is my first post here, and thank you for taking a look! 
