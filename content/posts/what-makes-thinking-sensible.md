@@ -34,12 +34,12 @@ In a world where we have to act quickly and are heavily influenced by biases, it
 Here are a few thoughts I gathered while trying to dig more into this:
 
 1. Adding a simple layer of *"do I have enough evidence to support this reasoning"* can save us a lot of time in decision making and improving quality of our decisions. For instance, if we don't feel confident in taking up a new project, asking ourselves for evidence and probing why we can't do it might give us an answer rather than getting stuck in the loop of whether we should do it or not.
-2. **Bayesian updating:** Simply put, it's a way to improve our beliefs after we get new information. Perhaps we can say it's an antidote to confirmation bias, which makes us believe what we already believe (in some cases despite getting new information). Reasoning something like "I used to believe I wouldn't be able to take up this project, but now that I reviewed my past 5 projects and all of them were successful, it's likely I can take up another one."
+2. **Bayesian updating:** Simply put, it's a way to improve our beliefs after we get new information. Perhaps we can say it's an antidote to confirmation bias, which makes us believe what we already believe (in some cases despite getting new information). Reasoning something like "I used to believe I wouldn't be able to take up this project, but now that I reviewed my past 5 projects and all of them were successful, it's likely I can take up another one." is a good example.
 3. Respect what we don't know as it's difficult to fully know what we don't know. But respecting that there's uncertainty and embracing a chance for something to show up off-script helps us prepare, and perhaps makes a setback more manageable.
 
-> Always respect what we don't know as it's difficult to fully know what we don't know.
+> Always respect the unknowns. It is very hard to measure and understand the space that we perceive as what we don't know.
 
-While there are a lot more thinking tools and mental models to explore (and we probably should), this is a good time to pause and think about how we actually reason for complex decisions. Perhaps it's also nice to watch the reasoning process of an AI model (we can just expand the thinking tasks/process in most of the AI models/tools today, as it happens) and see how we are different. Just a thought!
+While there are a lot more thinking tools and mental models to explore (and we probably should), this is a good time to pause and think about how we actually reason for complex decisions. Perhaps it's also nice to watch the reasoning process of an AI model (we can just expand the thinking process/steps in most of the AI models/tools today, as it happens) and see how we are different. Just a thought!
 
 ### References
 
