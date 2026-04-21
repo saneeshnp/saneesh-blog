@@ -213,3 +213,43 @@
 .post-description {
   display: none;
 }
+
+/* Switch the blog to a serif font stack for a rich reading experience.
+   Literata is the primary font, with system serif fallbacks so text is still
+   legible before the web font loads or if it fails. Literata was chosen over
+   Source Serif 4 because it renders slightly lighter at body sizes, which
+   feels closer to Medium's reading weight. */
+body {
+  font-family: 'Literata', Georgia, 'Times New Roman', Times, serif;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* PaperMod sets explicit font-family on some containers, which would block
+   the body inheritance. Force these to follow body so the serif applies
+   consistently across posts, home, nav, and meta text. */
+.post-title,
+.post-content,
+.entry-content,
+.entry-header,
+.post-meta,
+.nav a,
+.logo a,
+.menu a {
+  font-family: inherit;
+}
+
+/* Keep code blocks in a monospace stack even though body is now serif.
+   Reading code in a serif font is painful, so we override it back. */
+code, pre, kbd, samp, tt {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
+}
+
+/* Larger body text and looser line-height for post body only. Literata has
+   a slightly smaller apparent size than Source Serif 4, so we bump this
+   from 1.05rem to 1.15rem to match Medium's reading size more closely. */
+.post-content {
+  font-size: 1.15rem;
+  line-height: 1.75;
+}
