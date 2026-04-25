@@ -14,7 +14,7 @@ I came across this definition of a '**Reasoning AI model**' recently while readi
 
 According to the book, *a reasoning model is a type of AI/large language model that talks to itself in order to "reason" through a problem.*
 
-While a technical definition of how an AI model 'thinks' is more complicated, it still made me think - Do we also solve our problems by talking to ourselves? What's the general process of reasoning for humans? Is it just talking to ourselves? Is it asking "Why?" to get to the root of a problem and then finding a solution?
+While a technical definition of how an AI model 'thinks' is more complicated, it still made me think - Do we also solve our problems by talking to ourselves? What's the ideal process of reasoning for humans? Is it just talking to ourselves? Is it asking "Why?" to get to the root of a problem and then finding a solution?
 
 The dictionary meaning of reasoning is: The act of thinking about something in a sensible way.
 
