@@ -49,6 +49,9 @@ params:
   mainSections:
     - posts
 
+  images:
+    - images/og-home.png
+
   comments: true
   defaultTheme: auto  # Switches between light/dark based on browser
   ShowReadingTime: true
