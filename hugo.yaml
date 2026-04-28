@@ -50,7 +50,7 @@ params:
     - posts
 
   images:
-    - images/og-home.png
+    - images/saneesh-og-home.png
 
   comments: true
   defaultTheme: auto  # Switches between light/dark based on browser
