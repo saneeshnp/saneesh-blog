@@ -319,14 +319,22 @@ code, pre, kbd, samp, tt {
     grid-column: 1;
   }
 
-  /* Bio is now beside posts, not above — reduce the top margin
-     that was only needed to clear the bio box in the old layout */
+  /* Restore the original top margin so there is enough room for
+     the "Recent Posts" label to sit with breathing space above
+     the first card. The label sits at -3rem, so the gap between
+     the label bottom (~1.5rem tall) and the card top is ~1.5rem. */
   .main:has(.home-info) .home-info + .post-entry {
-    margin-top: 2.5rem;
+    margin-top: 4rem;
   }
 
-  /* Reposition the "Recent Posts" label to match reduced margin */
+  /* Move label higher to create visible gap below it */
   .main:has(.home-info) .home-info + .post-entry::before {
-    top: -2rem;
+    top: -3rem;
+  }
+
+  /* Align the bio sidebar top with the first post card, not with
+     the "Recent Posts" label above it */
+  .main:has(.home-info) .first-entry.home-info {
+    margin-top: 4rem;
   }
 }
