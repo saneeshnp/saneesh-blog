@@ -253,3 +253,80 @@ code, pre, kbd, samp, tt {
   font-size: 1.15rem;
   line-height: 1.75;
 }
+
+/* ============================================================
+   Homepage: two-column sidebar layout on desktop (≥ 900px)
+   Scoped via :has(.home-info) so post/archive/tag pages are
+   completely unaffected. Mobile layout is also untouched.
+
+   The nav bar is already 1024px (--nav-width). The main content
+   area is only 768px, leaving ~128px of empty margin on each
+   side. We expand .main to fill that nav width and use the
+   reclaimed space for a 240px bio sidebar — posts stay ~700px,
+   essentially the same as before.
+   ============================================================ */
+
+@media (min-width: 900px) {
+  /* Widen the homepage container to the nav bar width and split
+     into two columns. All other page types are unaffected. */
+  .main:has(.home-info) {
+    max-width: var(--nav-width);
+    display: grid;
+    grid-template-columns: 1fr 240px;
+    column-gap: 2rem;
+    align-items: start;
+  }
+
+  /* Bio into the right column, spanning all post rows so that
+     position: sticky has the full content height to work within */
+  .main:has(.home-info) .first-entry.home-info {
+    grid-column: 2;
+    grid-row: 1 / span 100;
+    position: sticky;
+    top: 5rem;
+    align-self: start;
+    padding: 1rem;
+    margin-bottom: 0;
+  }
+
+  /* Smaller heading — less visual weight needed in sidebar */
+  .main:has(.home-info) .first-entry.home-info .entry-header h1 {
+    font-size: 1rem;
+    margin-bottom: 0.5rem;
+  }
+
+  /* Compact bio text for the narrower column */
+  .main:has(.home-info) .first-entry.home-info .entry-content {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+
+  /* Profile photo scaled down to suit 240px sidebar */
+  .main:has(.home-info) .first-entry.home-info .entry-content::before {
+    width: 60px;
+    height: 60px;
+    margin: 0.25rem 0.75rem 0.5rem 0;
+  }
+
+  /* Tighten spacing above social icons */
+  .main:has(.home-info) .first-entry.home-info .entry-footer {
+    margin-top: 0.75rem;
+  }
+
+  /* Posts and pagination explicitly in left column */
+  .main:has(.home-info) .post-entry,
+  .main:has(.home-info) .pagination {
+    grid-column: 1;
+  }
+
+  /* Bio is now beside posts, not above — reduce the top margin
+     that was only needed to clear the bio box in the old layout */
+  .main:has(.home-info) .home-info + .post-entry {
+    margin-top: 2.5rem;
+  }
+
+  /* Reposition the "Recent Posts" label to match reduced margin */
+  .main:has(.home-info) .home-info + .post-entry::before {
+    top: -2rem;
+  }
+}
