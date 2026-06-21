@@ -1,0 +1,31 @@
+{{- /*
+  Override of PaperMod's home_info.html.
+  Adds a "Connect" heading and renders each social link with a text label
+  (Twitter / GitHub / RSS Feed) instead of icon-only, for the homepage bio
+  sidebar. The icon SVG still comes from the theme's svg.html via .name; the
+  label comes from the social icon's `title` (falling back to its name).
+  Classes (.first-entry.home-info, .social-icons) are kept so the existing
+  custom.css rules continue to apply.
+*/ -}}
+{{- with site.Params.homeInfoParams }}
+<article class="first-entry home-info">
+    <header class="entry-header">
+        <h1>{{ .Title | markdownify }}</h1>
+    </header>
+    <div class="entry-content">
+        {{ .Content | markdownify }}
+    </div>
+    <footer class="entry-footer">
+        <h2 class="connect-heading">Connect</h2>
+        <div class="social-icons">
+            {{- range site.Params.socialIcons }}
+            {{- $label := .title | default (.name | title) }}
+            <a href="{{ trim .url " " | safeURL }}" target="_blank" rel="noopener noreferrer me" title="{{ $label }}">
+                {{ partial "svg.html" . }}
+                <span class="social-label">{{ $label }}</span>
+            </a>
+            {{- end }}
+        </div>
+    </footer>
+</article>
+{{- end -}}

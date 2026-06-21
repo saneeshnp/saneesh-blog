@@ -54,6 +54,7 @@ params:
 
   comments: true
   defaultTheme: auto  # Switches between light/dark based on browser
+  DateFormat: "Jan 2, 2006"  # Abbreviated date (e.g. Apr 20, 2026) for the homepage card date column
   ShowReadingTime: true
   ShowShareButtons: true
   ShowPostNavLinks: true
@@ -67,16 +68,19 @@ params:
   TocOpen: false   # we are keeping the toc closed by default
 
   homeInfoParams:
-    Title: "Hi there!"
+    Title: "Hi there! 👋"
     Content: >
       Welcome to my corner of the internet. I'm Saneesh, and this is where I write my thoughts on AI, tech, investing, and philosophy. I also document what I'm learning along the way, from personal finance to the bigger questions about how AI is shaping our world. My projects are published here as well, feel free to explore.
 
   socialIcons:
-    - name: x 
+    - name: x
+      title: "Twitter"     # Label shown next to the icon in the homepage Connect list
       url: "https://x.com/saneeshnp"
     - name: github
+      title: "GitHub"
       url: "https://github.com/saneeshnp"
     - name: rss
+      title: "RSS Feed"
       url: "index.xml"
 
   # Security headers

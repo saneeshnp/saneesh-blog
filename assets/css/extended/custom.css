@@ -21,17 +21,20 @@
   margin-bottom: 1.5rem;
 }
 
-/* Recent Posts heading - outside the post card */
+/* "Latest Posts" heading - sits outside/above the first post card.
+   The leading ● is part of the content string so it inherits the heading
+   color; kept neutral (primary) rather than a coloured accent. */
 .home-info + .post-entry {
   margin-top: 4rem;
   position: relative;
 }
 
 .home-info + .post-entry::before {
-  content: "Recent Posts";
+  content: "● Latest Posts";
   display: block;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
+  letter-spacing: -0.01em;
   color: var(--primary);
   position: absolute;
   top: -2.75rem;
@@ -246,12 +249,166 @@ code, pre, kbd, samp, tt {
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono', monospace;
 }
 
-/* Larger body text and looser line-height for post body only. Literata has
-   a slightly smaller apparent size than Source Serif 4, so we bump this
-   from 1.05rem to 1.15rem to match Medium's reading size more closely. */
+/* Larger body text and looser line-height for post body only. Serif faces
+   used here render slightly small at the default 1.05rem, so we bump this to
+   1.15rem to match Medium's reading size more closely. */
 .post-content {
   font-size: 1.15rem;
   line-height: 1.75;
+}
+
+/* ============================================================
+   Homepage post cards
+   Restyles each post card into: a stacked date/reading-time column on
+   the left, a divider, then title + excerpt + a faux "Read more" link.
+   Scoped via .main:has(.home-info) so only the homepage list is affected;
+   post, archive and tag listings keep PaperMod's default card.
+   ============================================================ */
+
+.main:has(.home-info) .post-entry {
+  position: relative;
+  display: grid;
+  grid-template-columns: 115px 1fr;
+  grid-template-rows: auto auto auto;
+  column-gap: 1.5rem;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-bottom: 1.25rem;
+  background: var(--entry);
+  transition: box-shadow 0.2s ease, border-color 0.2s ease;
+}
+
+/* Lift on hover to signal the whole card is clickable (PaperMod's absolute
+   .entry-link already covers the card). */
+.main:has(.home-info) .post-entry:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border-color: var(--primary);
+}
+
+/* Date + reading time live in PaperMod's footer joined inline as
+   "date · reading · author". We collapse the separators by zeroing the
+   footer font-size and restoring it on the spans, stack the spans into a
+   left column, and use the column's right border as the divider bar. */
+.main:has(.home-info) .post-entry .entry-footer {
+  grid-column: 1;
+  grid-row: 1 / 4;
+  border-right: 2px solid var(--border);
+  padding-right: 1.25rem;
+  font-size: 0;
+}
+
+.main:has(.home-info) .post-entry .entry-footer span {
+  display: block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--secondary);
+  line-height: 1.6;
+}
+
+/* Third span is the author (site author is set globally); not wanted on
+   cards, so hide it and keep only date + reading time. */
+.main:has(.home-info) .post-entry .entry-footer span:nth-of-type(3) {
+  display: none;
+}
+
+/* Title + excerpt in the right column */
+.main:has(.home-info) .post-entry .entry-header {
+  grid-column: 2;
+  grid-row: 1;
+  margin: 0;
+}
+
+.main:has(.home-info) .post-entry .entry-header h2 {
+  font-size: 1.4rem;
+  line-height: 1.25;
+  margin: 0;
+}
+
+.main:has(.home-info) .post-entry .entry-content {
+  grid-column: 2;
+  grid-row: 2;
+  margin: 0.6rem 0 0;
+}
+
+/* Faux "Read more" link under the excerpt. Purely visual — the real link is
+   PaperMod's absolute .entry-link covering the whole card. */
+.main:has(.home-info) .post-entry::after {
+  content: "Read more →";
+  grid-column: 2;
+  grid-row: 3;
+  margin-top: 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+
+/* ============================================================
+   Homepage bio: "Connect" heading + labelled vertical social list.
+   Markup comes from the home_info.html partial override. Applies at all
+   widths (full-width box on mobile, sidebar on desktop). */
+
+.first-entry.home-info .connect-heading {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin: 0 0 0.75rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--border);
+}
+
+.first-entry.home-info .social-icons {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+.first-entry.home-info .social-icons a {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+  color: var(--secondary);
+  transition: color 0.2s ease;
+}
+
+.first-entry.home-info .social-icons a:hover {
+  color: var(--primary);
+}
+
+.first-entry.home-info .social-icons svg {
+  width: 18px;
+  height: 18px;
+}
+
+.first-entry.home-info .social-label {
+  font-size: 0.85rem;
+}
+
+/* On narrow screens the 115px date column leaves too little room for the
+   title, so stack the card vertically: date row on top, then title, excerpt
+   and read-more. We switch the card to flex-column and lift the footer with
+   order:-1 — this sidesteps the desktop grid's explicit row/column placement
+   (assigning the footer to grid-row 1 alongside the header caused them to
+   overlap in the same cell, which was the broken layout). */
+@media (max-width: 520px) {
+  .main:has(.home-info) .post-entry {
+    display: flex;
+    flex-direction: column;
+  }
+  .main:has(.home-info) .post-entry .entry-footer {
+    order: -1;
+    border-right: none;
+    border-bottom: 1px solid var(--border);
+    padding-right: 0;
+    padding-bottom: 0.65rem;
+    margin-bottom: 0.25rem;
+  }
+  .main:has(.home-info) .post-entry .entry-footer span {
+    display: inline-block;
+    margin-right: 0.85rem;
+  }
 }
 
 /* ============================================================
@@ -267,13 +424,18 @@ code, pre, kbd, samp, tt {
    ============================================================ */
 
 @media (min-width: 900px) {
-  /* Widen the homepage container to the nav bar width and split
-     into two columns. All other page types are unaffected. */
+  /* Widen the homepage container so its content box matches the header's.
+     The header is max-width (--nav-width + --gap*2) with --gap padding,
+     giving a 1024px centred content box. We mirror that exact formula here
+     (instead of max-width: --nav-width) so the post cards align flush with
+     the logo on the left and the menu on the right, while the inherited
+     --gap padding still keeps content off the screen edges on narrower
+     viewports. Then split into two columns. Other page types unaffected. */
   .main:has(.home-info) {
-    max-width: var(--nav-width);
+    max-width: calc(var(--nav-width) + var(--gap) * 2);
     display: grid;
-    grid-template-columns: 1fr 240px;
-    column-gap: 2rem;
+    grid-template-columns: 1fr 260px;
+    column-gap: 2.5rem;
     align-items: start;
   }
 
