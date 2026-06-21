@@ -215,12 +215,12 @@
 }
 
 /* Switch the blog to a serif font stack for a rich reading experience.
-   Literata is the primary font, with system serif fallbacks so text is still
-   legible before the web font loads or if it fails. Literata was chosen over
-   Source Serif 4 because it renders slightly lighter at body sizes, which
-   feels closer to Medium's reading weight. */
+   Lora is the primary font, with system serif fallbacks so text is still
+   legible before the web font loads or if it fails. Lora is a well-balanced
+   contemporary serif with roots in calligraphy, trialled here to compare
+   reading feel. */
 body {
-  font-family: 'Literata', Georgia, 'Times New Roman', Times, serif;
+  font-family: 'Lora', Georgia, 'Times New Roman', Times, serif;
   font-weight: 400;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
