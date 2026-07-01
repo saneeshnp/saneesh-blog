@@ -10,7 +10,7 @@ ShowToc: false
 
 What does it actually mean to think and reason?
 
-I came across this definition of a '**Reasoning AI model**' recently while reading the book "*How to AI*" by Christopher Mims.
+I recently came across this definition of a **"Reasoning AI model"** while reading the book *How to AI* by Christopher Mims. It also made me reflect on how we humans actually "think."
 
 According to the book, *a reasoning model is a type of AI/large language model that talks to itself in order to "reason" through a problem.*
 
@@ -23,6 +23,7 @@ The meaning still has a problem that any other word in a dictionary usually has,
 After digging a bit, here's what I think makes thinking 'sensible'. It's a way of thinking that:
 
 * is evidence-based
+* accounts for our biases
 * uses our larger knowledge base as needed
 * is open to correction
 * factors in any uncertainty
