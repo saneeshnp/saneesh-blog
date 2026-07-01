@@ -404,7 +404,7 @@ code, pre, kbd, samp, tt {
     border-bottom: 1px solid var(--border);
     padding-right: 0;
     padding-bottom: 0.65rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 0.85rem;
   }
   .main:has(.home-info) .post-entry .entry-footer span {
     display: inline-block;
@@ -531,6 +531,17 @@ code, pre, kbd, samp, tt {
   --code-bg: #2e2a22;
   --border: #3a3527;
   --accent: #7fa8c4;
+}
+
+/* Homepage-only card background, lighter than --entry, for more contrast
+   against the page in light mode. Set directly on these selectors rather
+   than on --entry itself, since --entry is shared with the project cards
+   and archive/tag post-entry cards, which should keep the regular tone. */
+[data-theme="light"] .main:has(.home-info) .post-entry,
+:root:not([data-theme="dark"]) .main:has(.home-info) .post-entry,
+[data-theme="light"] .first-entry.home-info,
+:root:not([data-theme="dark"]) .first-entry.home-info {
+  background: #fffcf3;
 }
 
 /* Links are the only thing that ever use --accent — this is the one rule
