@@ -53,7 +53,7 @@ params:
     - images/saneesh-og-home.png
 
   comments: true
-  defaultTheme: auto  # Switches between light/dark based on browser
+  defaultTheme: light  # Always light on first visit; toggle choice is remembered after that
   DateFormat: "Jan 2, 2006"  # Abbreviated date (e.g. Apr 20, 2026) for the homepage card date column
   ShowReadingTime: true
   ShowShareButtons: true
