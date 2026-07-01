@@ -21,15 +21,15 @@ languages:
         - name: Archive
           url: archives/
           weight: 5
-        - name: Search
-          url: search/
+        - name: Projects
+          url: /projects/
           weight: 10
         # - name: Tags
         #  url: tags/
         #  weight: 10
-        - name: Projects
-          url: /projects/
-          weight: 30        
+        - name: Search
+          url: search/
+          weight: 30
           
 
 outputs:

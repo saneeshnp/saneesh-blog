@@ -359,13 +359,17 @@ code, pre, kbd, samp, tt {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 0.65rem;
+  gap: 0.3rem;
 }
 
+/* Theme's default .social-icons a has a 10px padding meant for an
+   icon-only row of links; that's too much vertical space once stacked
+   in this column, so it's overridden down here. */
 .first-entry.home-info .social-icons a {
   display: flex;
   align-items: center;
   gap: 0.55rem;
+  padding: 2px 0;
   color: var(--secondary);
   transition: color 0.2s ease;
 }
