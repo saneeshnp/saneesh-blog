@@ -759,9 +759,14 @@ a {
 }
 
 /* Theme gives #menu auto vertical margins for the space-between layout;
-   zeroed so the centered row sits symmetrically next to the toggle. */
+   zeroed so the centered row sits symmetrically next to the toggle.
+   The bottom padding is clipping headroom: #menu scrolls horizontally on
+   narrow screens (overflow-x: auto), which also clips anything drawn below
+   its box — without this the active link's offset underline is cut off.
+   The negative margin cancels the extra height so centering is unchanged. */
 .nav #menu {
-  margin: 0;
+  margin: 0 0 -6px;
+  padding-bottom: 6px;
 }
 
 /* Strip is brighter than the page in light mode (same tone as the
@@ -812,4 +817,11 @@ button#theme-toggle {
    44px track − 2px borders − 2px inset − 18px knob = 20px of travel. */
 [data-theme="dark"] #theme-toggle svg {
   transform: translateX(20px);
+}
+
+/* The theme underlines the active menu link with a border drawn right
+   against the text; a touch of padding drops the line below the letters
+   so it reads as an indicator rather than struck-through text. */
+#menu .active {
+  padding-bottom: 4px;
 }
