@@ -354,11 +354,16 @@ code, pre, kbd, samp, tt {
   border-top: 1px solid var(--border);
 }
 
+/* Single row on narrow screens — the bio box is full width there, so a
+   stacked list leaves a large dead area to its right; wrap is a fallback
+   in case more links are added later. The desktop sidebar re-stacks it
+   below (260px is too narrow for a row). */
 .first-entry.home-info .social-icons {
   display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  gap: 0.3rem;
+  flex-wrap: wrap;
+  align-items: center;
+  column-gap: 1.4rem;
+  row-gap: 0.3rem;
 }
 
 /* Theme's default .social-icons a has a 10px padding meant for an
@@ -473,6 +478,14 @@ code, pre, kbd, samp, tt {
   /* Tighten spacing above social icons */
   .main:has(.home-info) .first-entry.home-info .entry-footer {
     margin-top: 0.75rem;
+  }
+
+  /* Re-stack the Connect links in the sidebar — the 260px column is too
+     narrow for the single-row layout used on smaller screens. */
+  .main:has(.home-info) .first-entry.home-info .social-icons {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.3rem;
   }
 
   /* Posts and pagination explicitly in left column */
