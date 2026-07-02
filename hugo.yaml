@@ -18,6 +18,9 @@ languages:
     weight: 1
     menu:
       main:
+        - name: Home
+          url: /
+          weight: 1
         - name: Archive
           url: archives/
           weight: 5
@@ -42,6 +45,7 @@ params:
   env: production
   title: "Saneesh"
   description: "Thoughts on AI, investing, and philosophy"
+  tagline: "Thoughts on AI, tech, investing, and philosophy."  # Shown under the site title in the masthead banner (header.html override)
   author: "Saneesh"
   authorBio:
     name: "Saneesh"

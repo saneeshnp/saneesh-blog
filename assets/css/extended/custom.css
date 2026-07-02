@@ -236,7 +236,6 @@ body {
 .entry-header,
 .post-meta,
 .nav a,
-.logo a,
 .menu a {
   font-family: inherit;
 }
@@ -672,19 +671,6 @@ a {
   font-weight: 500;
 }
 
-/* Site title stays neutral ink, not the link accent — it's the masthead,
-   not a navigational link, so it shouldn't compete with real links for
-   the "this is clickable" blue. */
-.logo a {
-  color: var(--primary);
-}
-
-/* Trying the masthead back in the serif (inherits body/Newsreader) instead
-   of Inter, to compare against the sans wordmark treatment. */
-.logo a {
-  font-family: inherit;
-}
-
 /* Homepage card excerpt was inheriting PaperMod's default 14px, which read
    too small next to the larger serif body/heading sizes elsewhere on the
    page. */
@@ -700,4 +686,130 @@ a {
   .main:has(.home-info) .first-entry.home-info .entry-content {
     font-size: 0.95rem;
   }
+}
+
+/* ============================================================
+   Masthead banner + centered nav strip.
+   Markup comes from the header.html partial override: a full-width
+   .site-banner (big centered title + tagline) followed by the .nav
+   strip holding the menu and the theme toggle. Rendered on every page.
+   ============================================================ */
+
+/* Layout only here — the watercolor background is applied light-mode-only
+   below, so dark mode falls back to the plain page color. */
+.site-banner {
+  text-align: center;
+  padding: 2.4rem var(--gap) 2.1rem;
+}
+
+/* Shorter banner on phones — less of the artwork's busy edges is shown
+   and the header doesn't eat half the first screen. */
+@media (max-width: 600px) {
+  .site-banner {
+    padding: 1.8rem 1rem 1.6rem;
+  }
+}
+
+/* Background is a CSS image (not an <img>) on purpose: it doesn't block
+   rendering — text and layout paint first, the watercolor fills in when
+   the file arrives. The flat color matches the image's own cream so the
+   pre-load frame and any edge overflow blend seamlessly. Positioned at
+   42% height so the visible band keeps the sun/peaks on the left and the
+   branches on the right at typical banner proportions. */
+[data-theme="light"] .site-banner,
+:root:not([data-theme="dark"]) .site-banner {
+  /* Radial cream layer sits over the image to keep the title/tagline
+     legible on narrow screens, where cover-cropping pulls the leaf
+     branches into the center; on wide screens the center of the artwork
+     is already empty so the glow is invisible. */
+  background:
+    radial-gradient(ellipse 62% 85% at 50% 45%, #f5f0e3e0 40%, #f5f0e300 100%),
+    #f5f0e3 url("/images/header-bg.jpg") center 42% / cover no-repeat;
+}
+
+/* Masthead stays neutral ink and the body serif, not the link accent —
+   it's the site's name, not a "clickable blue" navigational link. */
+.banner-title {
+  display: inline-block;
+  font-size: clamp(2.2rem, 1.4rem + 4vw, 3.4rem);
+  font-weight: 500;
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  color: var(--primary);
+}
+
+.banner-tagline {
+  margin: 0.5rem 0 0;
+  font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.1rem);
+  color: var(--secondary);
+}
+
+/* Nav strip: theme default is logo-left/menu-right with a tall
+   --header-height line box; recentered here as a slim full-width band
+   under the banner. max-width is lifted so the border/background run
+   edge to edge while the centered content self-constrains. */
+.nav {
+  justify-content: center;
+  align-items: center;
+  gap: 1.25rem;
+  max-width: none;
+  line-height: 1.6;
+  padding: 0.7rem var(--gap);
+  border-bottom: 1px solid var(--border);
+}
+
+/* Theme gives #menu auto vertical margins for the space-between layout;
+   zeroed so the centered row sits symmetrically next to the toggle. */
+.nav #menu {
+  margin: 0;
+}
+
+/* Strip is brighter than the page in light mode (same tone as the
+   homepage cards) so it reads as its own band between the watercolor
+   banner and the content, matching the mockup's white strip. */
+[data-theme="light"] .nav,
+:root:not([data-theme="dark"]) .nav {
+  background: #fffcf3;
+}
+
+:root[data-theme="dark"] .nav {
+  background: var(--entry);
+}
+
+/* Theme toggle restyled from a bare moon/sun icon into a small switch:
+   the button is the track, the (theme-swapped) moon/sun svg is the
+   sliding knob. PaperMod's own CSS still handles which icon shows
+   ([data-theme="dark"] hides #moon, light hides #sun) and the footer
+   script still handles the click — this is appearance only. */
+button#theme-toggle {
+  position: relative;
+  width: 44px;
+  height: 24px;
+  margin: 0;
+  padding: 0;
+  font-size: 0; /* theme sets 26px for the bare icon; kills the stray line box */
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  background: var(--code-bg);
+  cursor: pointer;
+}
+
+#theme-toggle svg {
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 18px;
+  height: 18px;
+  padding: 3px; /* breathing room so the icon sits inside the knob circle */
+  border-radius: 50%;
+  background: var(--theme);
+  color: var(--secondary);
+  transition: transform 0.25s ease;
+}
+
+/* Knob slides to the far end of the track in dark mode:
+   44px track − 2px borders − 2px inset − 18px knob = 20px of travel. */
+[data-theme="dark"] #theme-toggle svg {
+  transform: translateX(20px);
 }
