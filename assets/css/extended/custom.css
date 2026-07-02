@@ -721,6 +721,16 @@ a {
   .site-banner {
     padding: 1.8rem 1rem 1.6rem;
   }
+
+  /* Denser, wider glow than the desktop one: cover-cropping pulls the
+     leaves right behind the tagline at phone widths, so the text needs a
+     more opaque cream backing to stay readable. */
+  [data-theme="light"] .site-banner,
+  :root:not([data-theme="dark"]) .site-banner {
+    background:
+      radial-gradient(ellipse 85% 100% at 50% 50%, #f5f0e3f5 45%, #f5f0e300 100%),
+      #f5f0e3 url("/images/header-bg.jpg") center 42% / cover no-repeat;
+  }
 }
 
 /* Background is a CSS image (not an <img>) on purpose: it doesn't block
@@ -751,10 +761,13 @@ a {
   color: var(--primary);
 }
 
+/* Full ink rather than the muted secondary gray — over the watercolor the
+   gray was too close to the artwork's own tones and got lost where leaves
+   or mountains sit behind the text. */
 .banner-tagline {
   margin: 0.5rem 0 0;
   font-size: clamp(0.95rem, 0.85rem + 0.5vw, 1.1rem);
-  color: var(--secondary);
+  color: var(--primary);
 }
 
 /* Nav strip: theme default is logo-left/menu-right with a tall
