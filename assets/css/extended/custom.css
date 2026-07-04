@@ -782,6 +782,24 @@ a {
   line-height: 1.6;
   padding: 0.7rem var(--gap);
   border-bottom: 1px solid var(--border);
+  /* Never let the theme toggle wrap under the links. The theme's default
+     wrap dropped it to a second line on narrow devices with system font
+     scaling (e.g. 360px Samsung phones with enlarged text) — a combination
+     browser emulators don't reproduce. With nowrap, an extreme squeeze
+     makes #menu scroll sideways instead (it has overflow-x: auto). */
+  flex-wrap: nowrap;
+}
+
+/* Tighter link spacing on narrow screens buys headroom for system font
+   scaling before the menu would have to scroll. */
+@media (max-width: 420px) {
+  .nav {
+    gap: 1rem;
+  }
+
+  #menu li + li {
+    margin-inline-start: 1rem;
+  }
 }
 
 /* Theme gives #menu auto vertical margins for the space-between layout;
