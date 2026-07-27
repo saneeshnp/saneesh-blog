@@ -45,14 +45,14 @@ I don't want to go astray from the original topic, but this is worth considering
 
 While the above might sound like a pessimistic or overly cautious take, the bottom line is this: we should embrace AI, but also make sure it is not detrimental to our cognitive abilities over the years.
 
-> Our brains haven't evolved enough to easily realize that regular mental and physical effort is essential for our health and well-being.
+> Regular mental and physical effort is essential for our health and well-being. To an extent, thinking is the exercise for your mind, and we don't know how this would change in a heavily AI influenced world.
 
 When we use AI extensively, it can make us drown in cognitive debt, to the point where we can't reason well enough to tell what is an error and what is not. Our brains haven't evolved enough to easily realize that regular mental and physical effort is essential for our health and well-being. If that was not the case, then nobody would have any trouble going to the gym, or having a difficult conversation that would make us better people. Now, in 10 years' time, with that kind of advancement and 'less thinking' as a default, the possibility of error becomes higher, unless your definition of error changes. Unless the AI is self-correcting, the quality of our decisions degrades and eventually, **‘quality of your decisions’ = ‘quality of your AI’.**
 
 
-And unless your AI is self-correcting to the right degree, the results could be potentially harmful to humanity at that point. But we should think about factoring in our thinking and our roots as we develop this technology more. Perhaps all the AI pioneers are thinking this way. Will the AI journey going forward be more structured and controlled? Will our lives keep only improving because of the advancements in AI? Will we see lesser errors after AI? We have to wait and see. A balanced adoption approach might be the answer.
+And unless your AI is self-correcting to the right degree, the results could be potentially harmful to humanity at that point. But we should think about factoring in our thinking and our roots as we develop this technology more. Perhaps all the AI pioneers are thinking this way. Will the AI journey going forward be more structured and controlled? Will our lives keep only improving because of the advancements in AI? Will we see lesser errors after AI? We have to wait and see. A balanced adoption approach might be the answer. We should embrace AI and at the same time develop methods, curriculum and practices where our thinking stays sharp while AI makes our lives better.
 
-### References and Further Reading
+### References and further reading
 
 - **Research:** *[Your Brain on ChatGPT](https://www.media.mit.edu/publications/your-brain-on-chatgpt/)* by Kosmyna et al., MIT Media Lab — the study behind the term "cognitive debt"
 - **Research:** *[The Impact of Generative AI on Critical Thinking](https://dl.acm.org/doi/full/10.1145/3706598.3713778)* by Lee et al., Microsoft Research and CMU — higher confidence in AI is associated with less critical thinking
