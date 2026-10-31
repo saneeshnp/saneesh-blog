@@ -1,0 +1,41 @@
+{{ define "main" }}
+<article class="photo-gallery">
+  <header class="post-header">
+    <h1 class="post-title">{{ .Title }}</h1>
+    <div class="gallery-intro">{{ .Content }}</div>
+  </header>
+  <div class="photo-grid">
+    {{ range $index, $photo := .Params.photos }}
+      {{ $image := $.Resources.Get $photo.src }}
+      {{ if not $image }}{{ errorf "Gallery photo not found: %s" $photo.src }}{{ end }}
+      {{ if not $photo.alt }}{{ errorf "Gallery photo needs descriptive alt text: %s" $photo.src }}{{ end }}
+      {{ $small := $image.Fill "400x533 Center webp q85" }}
+      {{ $large := $image.Fill "800x1066 Center webp q85" }}
+      <figure class="photo-card">
+        <a class="photo-link" href="{{ $image.RelPermalink }}" data-year="{{ $photo.year }}" data-location="{{ $photo.location }}" data-note="{{ $photo.note }}" aria-label="Open photo: {{ $photo.alt }}">
+          <img src="{{ $small.RelPermalink }}" srcset="{{ $small.RelPermalink }} {{ $small.Width }}w, {{ $large.RelPermalink }} {{ $large.Width }}w" sizes="(max-width: 480px) calc(100vw - 48px), (max-width: 700px) calc((100vw - 64px) / 2), 230px" width="{{ $small.Width }}" height="{{ $small.Height }}" alt="{{ $photo.alt }}" {{ if gt $index 2 }}loading="lazy"{{ end }} decoding="async">
+        </a>
+        <figcaption class="photo-meta"><span>{{ $photo.year }}</span>{{ with $photo.location }}<span>{{ . }}</span>{{ end }}</figcaption>
+      </figure>
+    {{ end }}
+  </div>
+</article>
+<dialog class="photo-viewer" aria-label="Photo viewer">
+  <div class="photo-viewer-toolbar">
+    <span class="photo-counter" aria-live="polite"></span>
+    <button type="button" class="photo-close" aria-label="Close photo viewer" autofocus>Close ×</button>
+  </div>
+  <figure class="photo-viewer-figure">
+    <div class="photo-stage"><img class="photo-full" alt="" hidden><p class="photo-status" role="status"></p></div>
+    <figcaption>
+      <div id="photo-viewer-meta" class="photo-viewer-meta photo-meta"></div>
+      <p id="photo-note" class="photo-note" hidden></p>
+    </figcaption>
+  </figure>
+  <div class="photo-viewer-controls">
+    <button type="button" class="photo-previous" aria-label="Previous photo">← Previous</button>
+    <a class="photo-open" target="_blank" rel="noopener">Open full size ↗</a>
+    <button type="button" class="photo-next" aria-label="Next photo">Next →</button>
+  </div>
+</dialog>
+{{ end }}

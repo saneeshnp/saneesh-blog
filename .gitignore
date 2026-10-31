@@ -21,3 +21,8 @@ Thumbs.db
 
 # Local rendering test posts, never published
 content/posts/_test-*.md
+
+# Keep full-resolution photos and their original metadata out of the repository.
+Photos Original/
+# Review processed copies here before selecting any for the public gallery.
+Photos Prepared/

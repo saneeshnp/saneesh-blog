@@ -869,3 +869,53 @@ button#theme-toggle {
 #menu .active {
   padding-bottom: 4px;
 }
+/* Keep the gallery in PaperMod's reading width; a simple grid needs no layout script. */
+.gallery-intro { color: var(--secondary); margin-top: 1rem; }
+.photo-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem 1rem; }
+.photo-card { margin: 0; min-width: 0; }
+.photo-link { display: block; border-radius: 6px; overflow: hidden; background: var(--entry); }
+/* Crop only previews to fill the frame; the viewer still shows the complete photograph. */
+.photo-link img { display: block; width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; margin: 0; }
+/* An inset outline remains visible at the edge of a keyboard-focused thumbnail. */
+.photo-link:focus-visible { outline: 3px solid var(--accent); outline-offset: 4px; }
+.photo-meta { display: flex; flex-wrap: wrap; gap: .25rem .6rem; color: var(--secondary); font-family: 'Inter', sans-serif; font-size: .7rem; line-height: 1.6; margin-top: .5rem; }
+.photo-meta span + span::before { content: '·'; margin-right: .6rem; }
+/* Light paper frames distinguish the photos from the warm page without changing dark mode. */
+[data-theme="light"] .photo-card,
+:root:not([data-theme="dark"]) .photo-card {
+  padding: .5rem;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  background: color-mix(in srgb, var(--theme) 35%, Canvas);
+  box-shadow: 0 3px 14px color-mix(in srgb, var(--primary) 5%, transparent);
+}
+/* Give light-mode captions a little breathing room within their paper frames. */
+[data-theme="light"] .photo-card .photo-meta,
+:root:not([data-theme="dark"]) .photo-card .photo-meta { padding: .15rem .25rem .25rem; }
+/* A fine divider anchors the gallery introduction in the lighter palette. */
+[data-theme="light"] .photo-gallery .post-header,
+:root:not([data-theme="dark"]) .photo-gallery .post-header { padding-bottom: 1.25rem; border-bottom: 1px solid var(--border); }
+/* Native dialog supplies focus trapping and Escape support without a viewer dependency. */
+.photo-viewer { width: min(1100px, calc(100vw - 2rem)); max-width: none; max-height: calc(100dvh - 2rem); padding: 1rem; border: 1px solid var(--border); border-radius: 8px; background: var(--theme); color: var(--primary); margin: auto; overflow-y: auto; }
+.photo-viewer::backdrop { background: var(--primary); opacity: .8; }
+.photo-viewer-toolbar, .photo-viewer-controls { display: flex; align-items: center; justify-content: space-between; gap: .75rem; font-family: 'Inter', sans-serif; font-size: .8rem; }
+/* Keep viewer controls comfortable to tap even with the compact mobile font. */
+.photo-viewer button { min-width: 44px; min-height: 44px; color: var(--primary); background: var(--entry); border: 1px solid var(--border); border-radius: 4px; padding: .55rem .75rem; cursor: pointer; }
+.photo-open { display: inline-flex; align-items: center; min-height: 44px; }
+.photo-viewer :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.photo-counter { color: var(--secondary); }
+.photo-viewer-figure { margin: .75rem 0; }
+/* A stable stage prevents controls jumping as portrait and landscape images load. */
+.photo-stage { height: min(65dvh, 760px); display: grid; grid-template: minmax(0, 1fr) / minmax(0, 1fr); place-items: center; background: var(--entry); }
+.photo-full { width: 100%; height: 100%; min-width: 0; min-height: 0; object-fit: contain; margin: 0; }
+.photo-status { padding: 1rem; text-align: center; color: var(--secondary); }
+.photo-note { margin: .5rem 0; white-space: pre-line; }
+/* Preserve the hidden attribute against theme styles and keep small screens comfortable. */
+.photo-viewer [hidden] { display: none; }
+@media (max-width: 700px) { .photo-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (max-width: 480px) {
+  .photo-grid { grid-template-columns: 1fr; }
+  .photo-viewer { padding: .75rem; width: calc(100vw - 1rem); max-height: calc(100dvh - 1rem); }
+  .photo-viewer-controls { font-size: .7rem; gap: .4rem; }
+  .photo-viewer button { padding: .55rem; }
+}
