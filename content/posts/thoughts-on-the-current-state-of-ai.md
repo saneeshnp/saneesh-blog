@@ -8,7 +8,7 @@ description: "AI is advancing rapidly, but is it time for it to completely repla
 
 There is a new breakthrough every day in the generative AI landscape now, perhaps every hour. New frontier AI model updates launching every other day, AI solving math problems that were unsolved for decades and frontier open source models being released every week. It has become difficult to catch up, and that’s understandable. Human context is limited and not as flexible as the growing context windows of frontier models. We have never been exposed to a world where tech moved this fast, although tech has always been defined by change.
 
-A few months ago when I started this blog, [I wrote about asking ourselves the end goal with AI](https://saneesh.net/posts/and-then-what-life-after-ai-takes-over/). I also wrote that we don’t know when we will achieve Artificial General Intelligence (AGI, the state where AI is broadly as capable as humans), and probably we may not see that in our lifetimes. I think that needs a correction - I believe we are slowly getting there.
+A few months ago when I started this blog, [I wrote about asking ourselves the end goal with AI](/posts/and-then-what-life-after-ai-takes-over/). I also wrote that we don’t know when we will achieve Artificial General Intelligence (AGI, the state where AI is broadly as capable as humans), and probably we may not see that in our lifetimes. I think that needs a correction - I believe we are slowly getting there.
 
 ## Is AGI really here?
 
