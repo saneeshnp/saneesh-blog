@@ -23,11 +23,19 @@
             {{- $page_url:= $currentPage.Permalink | absLangURL }}
             {{- $is_search := eq (site.GetPage .KeyName).Layout `search` }}
             <li>
-                <a href="{{ .URL | absLangURL }}" title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
+                <a href="{{ .URL | absLangURL }}" {{ if $is_search }}class="nav-search"{{ end }} title="{{ .Title | default .Name }} {{- cond $is_search (" (Alt + /)" | safeHTMLAttr) ("" | safeHTMLAttr ) }}"
                 {{- cond $is_search (" accesskey=/" | safeHTMLAttr) ("" | safeHTMLAttr ) }}>
                     <span {{- if eq $menu_item_url $page_url }} class="active" {{- end }}>
                         {{- .Pre }}
+                        {{- if $is_search -}}
+                        <span class="nav-search-label">{{ .Name }}</span>
+                        <svg class="nav-search-icon" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" viewBox="0 0 24 24" width="20" height="20">
+                            <circle cx="10.5" cy="10.5" r="7.5"></circle>
+                            <path d="m16 16 5 5"></path>
+                        </svg>
+                        {{- else -}}
                         {{- .Name -}}
+                        {{- end -}}
                         {{ .Post -}}
                     </span>
                     {{- if (findRE "://" .URL) }}&nbsp;
